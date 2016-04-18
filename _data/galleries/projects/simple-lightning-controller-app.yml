@@ -1,0 +1,14 @@
+- url: LaunchScreen.png
+  title: Launch Screen
+
+- url: AddingController.png
+  title: Adding Controller
+
+- url: ControllersList_WithError.png
+  title: Controllers List
+
+- url: EditMode_Deleting.png
+  title: Deleting Controllers
+
+- url: EditMode_Renaming.png
+  title: Renaming Controllers

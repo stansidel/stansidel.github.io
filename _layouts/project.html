@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+{% capture imagesdir %}{{ site.baseurl }}/assets/{{ page.url }}{% endcapture %}
+{% capture projectId %}{{ page.url | split: "/" | last }}{% endcapture %}
+{% for gallery in site.data.galleries.projects %}
+{% if gallery[0] == projectId %}
+{% assign galleryInfo = gallery[1] %}
+<div class="image-gallery">
+{% for image in galleryInfo %}
+  {% include image-lightbox.html id=projectId title=image.title dir=imagesdir url=image.url %}
+{% endfor %}
+</div>
+{% endif %}
+{% endfor %}
+  </div>
+
+</article>
