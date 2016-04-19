@@ -1,6 +1,7 @@
 ---
 layout: post
 title: First Android App
+permalink: /2012/06/first-android-app/
 ---
 I've finished a beta of my first Android app for internal use, a front office system for the Cafe owned by our company. It has 6 thousands lines of code, I've spent 170 hours for immidiate development of it.
 
