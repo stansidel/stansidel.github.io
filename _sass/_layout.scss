@@ -180,8 +180,19 @@
     list-style: none;
 
     > li {
+        @extend %clearfix;
+        > a.post-image {
+            float: left;
+            margin-right: 20px;
+
+            img {
+                max-width: 150px;
+                max-height: 150px;
+            }
+        }
         margin-bottom: $spacing-unit;
     }
+
 }
 
 .post-meta {
@@ -194,7 +205,23 @@
     font-size: 24px;
 }
 
+.image-gallery {
+  text-align: center;
 
+  .image {
+     display: inline-block;
+  }
+}
+
+@mixin clearfix {
+  &:after {
+       content: " "; /* Older browser do not support empty content */
+          visibility: hidden;
+             display: block;
+                height: 0;
+                   clear: both;
+  }
+}
 
 /**
  * Posts

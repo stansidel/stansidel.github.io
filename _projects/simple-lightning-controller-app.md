@@ -3,6 +3,7 @@ layout: project
 title:  "A Simple Lightning Controller App"
 date:   2016-04-18 09:59:06 +0500
 collection: projects
+image: LaunchScreen.png
 ---
 
 This app is a remote control for home appliances.
