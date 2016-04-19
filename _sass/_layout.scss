@@ -213,16 +213,6 @@
   }
 }
 
-@mixin clearfix {
-  &:after {
-       content: " "; /* Older browser do not support empty content */
-          visibility: hidden;
-             display: block;
-                height: 0;
-                   clear: both;
-  }
-}
-
 /**
  * Posts
  */
@@ -265,5 +255,15 @@
         @include media-query($on-laptop) {
             font-size: 18px;
         }
+    }
+
+    .limit-image {
+      max-width: 500px;
+      max-height: 500px;
+    }
+
+    .image-center {
+      margin: 0 auto;
+      display: block;
     }
 }
