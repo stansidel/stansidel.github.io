@@ -25,6 +25,16 @@ I doubted that the service was really that bad. So I did some research to unders
 At first, you are to initialise the Parse object with this code
 ([source](http://www.robpercival.co.uk/parse-server-on-heroku/), without the comment for masterKey):
 
+```swift
+let parseConfiguration = ParseClientConfiguration(block: { (ParseMutableClientConfiguration) -> Void in
+    ParseMutableClientConfiguration.applicationId = "myAppId"
+    ParseMutableClientConfiguration.clientKey = "myMasterKey" // This is wrong! Never put your master key into the sources.
+    ParseMutableClientConfiguration.server = "https://anotherdarntest.herokuapp.com/parse"
+})
+
+Parse.initializeWithConfiguration(parseConfiguration)
+```
+
 So you specify the master key which involves that unrestricted power.
 Very strange, like giving away your master SSH key to everyone.
 As it turned out the master key shouldn’t be used in you app.
@@ -98,6 +108,20 @@ but it’s nowhere in the Dashboard of the Parse Server. I found a submitted and
 merged [pull request](https://github.com/ParsePlatform/parse-server/pull/684).
 So this option is there… somewhere. In fact, you have to add this option to
 your server’s configuration in the `index.js` file of your server, the one you cloned from Heroku.
+
+```javascript
+var api = new ParseServer({
+  databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
+  cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
+  appId: process.env.APP_ID || 'myAppId',
+  masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
+  serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',  // Don't forget to change to https if needed
+  liveQuery: {
+    classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
+  },
+  allowClientClassCreation: process.env.CLIENT_CLASS_CREATION || false // <<< This line is added for disabling client class creation
+});
+```
 
 With this line, the server looks if the CLIENT_CLASS_CREATION config variable is defined
 and disallows class creation by clients if it’s not. Having that option added, you need
