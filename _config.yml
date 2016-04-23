@@ -23,3 +23,5 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
+
+exclude: [vendor, "Gemfile", "Gemfile.lock"]
