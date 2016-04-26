@@ -9,7 +9,8 @@ title: Projects
   <h1 class="page-heading">Projects</h1>
 
   <ul class="post-list">
-    {% for project in site.projects %}
+    {% assign sortedProjects = site.projects | sort: 'date' | reverse %}
+    {% for project in sortedProjects %}
       <li>
         {% if project.image %}
           {% capture imagesdir %}{{ site.baseurl }}/assets/{{ project.url }}{% endcapture %}

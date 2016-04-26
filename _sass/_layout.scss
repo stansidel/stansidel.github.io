@@ -183,10 +183,12 @@
         @extend %clearfix;
         > a.post-image {
             float: left;
-            margin-right: 20px;
+            margin-right: 10px;
+            width: 100px;
+            text-align: center;
 
             img {
-                max-width: 150px;
+                max-width: 100px;
                 max-height: 150px;
             }
         }

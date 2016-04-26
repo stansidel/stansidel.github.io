@@ -9,7 +9,14 @@ layout: default
   </header>
 
   <div class="post-content" itemprop="articleBody">
+  	{% if page.itunes-link %}
+  	<div class="itunes-link">
+  		<a href="{{ page.itunes-link }}" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg) no-repeat;width:165px;height:40px;"></a>
+  	</div>
+  	{% endif %}
+  	
     {{ content }}
+
 {% capture imagesdir %}{{ site.baseurl }}/assets/{{ page.url }}{% endcapture %}
 {% capture projectId %}{{ page.url | split: "/" | last }}{% endcapture %}
 {% for gallery in site.data.galleries.projects %}
@@ -22,6 +29,7 @@ layout: default
 </div>
 {% endif %}
 {% endfor %}
+
   </div>
 
 </article>
