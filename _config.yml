@@ -19,6 +19,7 @@ github_username:  stansidel
 
 # Build settings
 markdown: kramdown
+permalink: /:categories/:year/:month/:title
 
 collections:
   projects:
