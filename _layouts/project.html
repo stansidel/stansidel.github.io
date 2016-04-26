@@ -17,7 +17,7 @@ layout: default
   	
     {{ content }}
 
-{% capture imagesdir %}{{ site.baseurl }}/assets/{{ page.url }}{% endcapture %}
+{% capture imagesdir %}{{ site.baseurl }}/assets{{ page.url }}{% endcapture %}
 {% capture projectId %}{{ page.url | split: "/" | last }}{% endcapture %}
 {% for gallery in site.data.galleries.projects %}
 {% if gallery[0] == projectId %}

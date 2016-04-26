@@ -181,15 +181,18 @@
 
     > li {
         @extend %clearfix;
+        $list-image-width: 100px;
+        $list-image-height: 150px;
         > a.post-image {
             float: left;
             margin-right: 10px;
-            width: 100px;
+            width: $list-image-width;
+            height: $list-image-height;
             text-align: center;
 
             img {
-                max-width: 100px;
-                max-height: 150px;
+                max-width: $list-image-width;
+                max-height: $list-image-height;
             }
         }
         margin-bottom: $spacing-unit;
