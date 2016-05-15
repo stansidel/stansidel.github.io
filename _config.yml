@@ -12,8 +12,8 @@ email: stan@stansidel.com
 description: > # this means to ignore newlines until "baseurl:"
   A blog about iOS, Mac OS X, web and general software development.
 baseurl: "" # the subpath of your site, e.g. /blog
-webhost: "www.stansidel.com"
-url: "https://www.stansidel.com" # the base hostname & protocol for your site
+webhost: "stansidel.com"
+url: "https://stansidel.com" # the base hostname & protocol for your site
 twitter_username: stansidel
 github_username:  stansidel
 
