@@ -13,3 +13,4 @@ To add an image gallery to a project:
 4. Add a data file to the `/_data/projects` directory, name it after the file int the `_projects` directory.
 5. Put an array of the file descriptions for each of the file in the gallery: title and filename
 (without subdirectories, just `MyPhoto.png`).
+
