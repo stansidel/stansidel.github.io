@@ -5,7 +5,7 @@ permalink: /2016/02/udp-server-and-client-in-swift/
 ---
 I recently had a chance to work on a iOS Client written in Swift that would talk to a UDP server. The app basically needed to send a request to the server and receive the response.
 
-All over UDP. It turned out to be quite a simple task if done using the [SwiftSocket library](https://github.com/swiftsocket/SwiftSocket).
+All over UDP. It turned out to be quite a simple task if done using the [CocoaAsyncSocket](https://github.com/robbiehanson/CocoaAsyncSocket).
 I set up a simple Mac OS X test server and a corresponding iOS test client. The sources are here:
 
 *   [https://github.com/stansidel/udpclient_swift](https://github.com/stansidel/udpclient_swift)
