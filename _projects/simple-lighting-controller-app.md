@@ -1,6 +1,6 @@
 ---
 layout: project
-title:  "A Simple Lightning Controller App"
+title:  "A Simple Lighting Controller App"
 date:   2016-04-18 09:59:06 +0500
 collection: projects
 image: LaunchScreen.png
